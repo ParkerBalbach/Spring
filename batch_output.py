@@ -69,7 +69,7 @@ def batch_run(mp_coord_df, point_type):
             # NOAA
             print('Pulling 7 day forecast data from NOAA (this may take a while)...\n')
             df = wx_nws_api.append_high_low(df)
-            #print('this is the df for the wx_nws_api: ',df)
+            print('this is the df for the wx_nws_api: ',df)
 
             # Spreadsheet
             df = emulate_spreadsheet.build_emulated_spreadsheet(lat, lon, point_string, df)

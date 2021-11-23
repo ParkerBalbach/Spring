@@ -65,11 +65,11 @@ def append_high_low(in_df):
     high_low_temps_df = temps_df.groupby('day').agg({'low':'min', 'high':'max'}).reset_index()
     high_low_temps_df.index.name = 'index'
     high_low_temps_df = high_low_temps_df.drop(labels=0, axis=0)
+   
+    df = in_df.copy()
+    df = df.append(high_low_temps_df, ignore_index=True)
 
-    in_def = in_df.append(high_low_temps_df, ignore_index=True)
-    print('this is in_def: ', in_def)
-
-    return in_df
+    return df
 
 
 
